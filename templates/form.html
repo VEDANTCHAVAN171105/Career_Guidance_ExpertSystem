@@ -1,0 +1,318 @@
+<!-- templates/form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment - Intelligent Career Guidance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>CareerGuide<span class="accent">AI</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="/"><i class="fas fa-home"></i> Home</a>
+                <a href="/form" class="active"><i class="fas fa-clipboard-list"></i> Assessment</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="assessment-container">
+        <div class="assessment-progress">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <div class="step-label">Education</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <div class="step-label">Interests</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <div class="step-label">Skills</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="step-number">4</div>
+                <div class="step-label">Personality</div>
+            </div>
+        </div>
+
+        <form id="assessmentForm" class="assessment-form">
+            <!-- Step 1: Education Level -->
+            <div class="form-step active" data-step="1">
+                <div class="form-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h2>Select Your Education Level</h2>
+                    <p>This helps us provide age-appropriate career guidance</p>
+                </div>
+                <div class="education-options">
+                    <label class="education-card">
+                        <input type="radio" name="education_level" value="10th" required>
+                        <div class="card-content">
+                            <i class="fas fa-school"></i>
+                            <h3>Class 10th</h3>
+                            <p>Just completed or appearing for 10th standard</p>
+                        </div>
+                    </label>
+                    <label class="education-card">
+                        <input type="radio" name="education_level" value="12th" required>
+                        <div class="card-content">
+                            <i class="fas fa-university"></i>
+                            <h3>Class 12th</h3>
+                            <p>Completed or appearing for 12th standard</p>
+                        </div>
+                    </label>
+                </div>
+                <button type="button" class="next-btn">Next Step <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Step 2: Interests -->
+            <div class="form-step" data-step="2">
+                <div class="form-header">
+                    <i class="fas fa-heart"></i>
+                    <h2>What are your interests?</h2>
+                    <p>Select all that apply to you</p>
+                </div>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="coding">
+                        <i class="fas fa-code"></i>
+                        <span>Coding & Programming</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="design">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Design & Creativity</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="management">
+                        <i class="fas fa-users"></i>
+                        <span>Management & Leadership</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="data">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Data & Analytics</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="business">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Business & Strategy</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="security">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security & Hacking</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="cloud">
+                        <i class="fas fa-cloud"></i>
+                        <span>Cloud & Infrastructure</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="marketing">
+                        <i class="fas fa-chart-simple"></i>
+                        <span>Marketing & Branding</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="interests" value="analytics">
+                        <i class="fas fa-calculator"></i>
+                        <span>Statistics & Mathematics</span>
+                    </label>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button type="button" class="next-btn">Next Step <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 3: Skills -->
+            <div class="form-step" data-step="3">
+                <div class="form-header">
+                    <i class="fas fa-tools"></i>
+                    <h2>What skills do you have?</h2>
+                    <p>Select your strongest skills</p>
+                </div>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="programming">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Programming</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="communication">
+                        <i class="fas fa-comments"></i>
+                        <span>Communication</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="analytics">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Analytics</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="creativity">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Creativity</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="leadership">
+                        <i class="fas fa-crown"></i>
+                        <span>Leadership</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="problem_solving">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Problem Solving</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="design">
+                        <i class="fas fa-palette"></i>
+                        <span>Design</span>
+                    </label>
+                    <label class="option-card">
+                        <input type="checkbox" name="skills" value="mathematics">
+                        <i class="fas fa-square-root-alt"></i>
+                        <span>Mathematics</span>
+                    </label>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button type="button" class="next-btn">Next Step <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Step 4: Personality & Work Style -->
+            <div class="form-step" data-step="4">
+                <div class="form-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>Personality & Work Style</h2>
+                    <p>Tell us about yourself</p>
+                </div>
+                
+                <div class="form-section">
+                    <label class="section-label">Personality Type</label>
+                    <div class="personality-options">
+                        <label class="personality-card">
+                            <input type="radio" name="personality" value="introvert" required>
+                            <i class="fas fa-user-astronaut"></i>
+                            <h3>Introvert</h3>
+                            <p>Energized by alone time, thoughtful, focused</p>
+                        </label>
+                        <label class="personality-card">
+                            <input type="radio" name="personality" value="ambivert" required>
+                            <i class="fas fa-user-ninja"></i>
+                            <h3>Ambivert</h3>
+                            <p>Balanced, adaptable to situations</p>
+                        </label>
+                        <label class="personality-card">
+                            <input type="radio" name="personality" value="extrovert" required>
+                            <i class="fas fa-user-friends"></i>
+                            <h3>Extrovert</h3>
+                            <p>Energized by social interaction, outgoing</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label class="section-label">Preferred Work Style</label>
+                    <div class="workstyle-options">
+                        <label class="workstyle-card">
+                            <input type="radio" name="work_style" value="independent" required>
+                            <i class="fas fa-user-check"></i>
+                            <h3>Independent</h3>
+                            <p>Work alone, self-motivated</p>
+                        </label>
+                        <label class="workstyle-card">
+                            <input type="radio" name="work_style" value="team" required>
+                            <i class="fas fa-users"></i>
+                            <h3>Team-oriented</h3>
+                            <p>Collaborate with others</p>
+                        </label>
+                        <label class="workstyle-card">
+                            <input type="radio" name="work_style" value="hybrid" required>
+                            <i class="fas fa-balance-scale"></i>
+                            <h3>Hybrid</h3>
+                            <p>Mix of both</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i> Back</button>
+                    <button type="submit" class="submit-btn">Analyze My Career <i class="fas fa-chart-line"></i></button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Analyzing your profile...</p>
+            <p class="loading-message">Our AI is matching you with the best careers</p>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chat-widget">
+        <div class="chat-toggle" id="chatToggle">
+            <i class="fas fa-comment-dots"></i>
+            <div class="notification-badge"></div>
+        </div>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+    <div class="chat-header-info">
+        <div class="chat-avatar">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div>
+            <h4>Career Assistant</h4>
+            <p>Online • Ready to help</p>
+        </div>
+    </div>
+    <div class="chat-header-actions">
+        <button class="reset-chat-btn" id="resetChatBtn" title="Reset Conversation">
+            <i class="fas fa-sync-alt"></i>
+        </button>
+        <button class="chat-close" id="chatClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>👋 Need help with the assessment? I can guide you through it!</p>
+                        <p>Ask me about any career or skill requirement.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Ask me anything..." autocomplete="off">
+                <button id="chatSendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
